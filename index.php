@@ -41,8 +41,10 @@ function isHoliday($days){
 
 	$currentday = strval(date('mj'));
 	$currentmonth = (int) date('m');
-	$dayofweek = (int) date('N');
-	$year = date('Y');
+	$currentdayofweek = (int) date('N');
+	$currentyear = date('Y');
+	$dayofweek_flag = flase;
+	$weekofmonth_flag = false;
 
 	if ($currentmonth == 1 || $currentmonth == 3 || $currentmonth == 5 || $currentmonth ==8 || $currentmonth == 10 || $currentmonth ==12) 
 	{
@@ -95,16 +97,21 @@ function isHoliday($days){
 		$element = explode('.', $value);
 
 		echo "<br>";
-		echo "DayOfWeek is $dayofweek but we are searching $element[2] ";
+		echo "DayOfWeek is $currentdayofweek but we are searching $element[2] ";
 			
 
-		if ( $element[2] != 'x' && $element[2] == $dayofweek) {
-			echo "Got float!";
+		if ( $element[2] != 'x' && $element[2] == $currentdayofweek) {
+			echo "  GOT FLOAT DAY!";
+			$dayofweek_flag = true;
 			
 		}
 	}
+		
+	if ($dayofweek_flag == true && $weekofmonth_flag == true) {
 		echo "<br>";
-		echo "And we find nothig to selebrate today!";
+		echo "<br>";
+		echo "WE FINDED IT OUT! Now is holiday!!!!";
+	}
 			
 }
 
