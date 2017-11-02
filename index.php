@@ -11,7 +11,7 @@
 <?php
 /*
 Day Format:
-	You hate populate 5 values in array element for holiday description.
+	You have to populate 5 values in array element for holiday description.
 	Template is: MM.DD.Wday.Week
 		MM: from 01 to 12 month (ex. May is 05, Dec is 12);
 		DD: Days of month from 1 to 31;
